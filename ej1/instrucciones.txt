@@ -1,0 +1,6 @@
+Ejercicio 1: Cuenta bancaria. Escribir el código C de un TAD que gestione una cuenta bancaria, indicando el fichero donde se localizaría cada fragmento. Deben poder realizarse las siguientes operaciones:
+Crear una cuenta nueva con un saldo inicial determinado.
+Destruir una cuenta.
+Añadir dinero a la cuenta.
+Sacar dinero de la cuenta.
+Consultar el saldo.
