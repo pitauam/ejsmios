@@ -11,7 +11,6 @@ main.o: main.c rational.h
 rational.o: rational.c rational.h types.h
 	gcc -c -Wall -ansi -pedantic rational.c
 
-
 clean:
 	rm -f *.o programa
 
