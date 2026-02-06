@@ -6,8 +6,8 @@ int main()
 {
     Election *election = NULL;
     int n;
-    double perc;
     int ncandidates;/*number of candidates*/
+    int i,j;
 
     printf("How many candidates are there?: ");
     scanf("%i", &ncandidates);
@@ -23,19 +23,19 @@ int main()
     if (election == NULL)
     {
         printf("There was an ERROR while creating the elections.\n");
-        return ERROR; // error
+        return ERROR; /*error*/ 
     }
 
     /* 2. Votar. Usa bucles o llamadas sueltas [cite: 502, 507, 515] */
     /* Ejemplo: election_vote(election, 0); */
 
     n = 0;
-    for (int i = 0; i < ncandidates; i++)
+    for (i = 0; i < ncandidates; i++)
     {
         printf("How many votes did the candidate number %i get?: ", i + 1);
         scanf("%i", &n);
 
-        for (int j = 0; j < n; j++) /*un poco cutre pero representa como se cuenta cada voto uno por uno*/
+        for (j = 0; j < n; j++) /*un poco cutre pero representa como se cuenta cada voto uno por uno*/
         {
             /*iba a comprobar que j no fuese negativo pero me parece excesivo*/
 

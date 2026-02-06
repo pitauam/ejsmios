@@ -66,11 +66,8 @@ Status election_vote(Election *e, int option)
     {
         return ERROR;
     }
-    else
-    {
-        option++;
-        e->total_votes++;
-    }
+    e->votes[option]++; 
+    e->total_votes++;
     return OK;
 }
 
@@ -81,17 +78,15 @@ double election_get_percentage(Election *e, int option)
        2. ¡Cuidado! Usa (double) para no perder decimales.
        3. Si el total es 0, devuelve 0.0. [cite: 495]
     */
-    if (e == NULL)
-    {
-        return -1; /*representa ERROR*/
+
+    if (e == NULL || option < 0 || option >= e->n_options) {
+        return -1; 
     }
-    if (option == 0)
-    {
+    if (e->total_votes == 0) {
         return 0.0;
     }
 
-    double p = (option / e->total_votes) * 100.0;
-    return p;
+    return ( (double)e->votes[option] / e->total_votes ) * 100.0;
 }
 
 void election_print(Election *e)
@@ -100,22 +95,24 @@ void election_print(Election *e)
        Haz un bucle que imprima cada candidato y su resultado[cite: 496, 517].
        Ejemplo: "Candidato 0: 2 votos (28.57%)"
     */
+    int i;
     if (e == NULL || e->votes == NULL)
     {
         return;
     }
 
-    for (int i = 0; i < e->n_options; i++)
+    for (i = 0; i < e->n_options; i++)
     {
-        int result = election_get_percentage(e, i);
+        double result;
+        result = election_get_percentage(e, i);
 
-        if (result == ERROR)
+        if (result == -1)
         {
             printf("Error when printing results of the candidate number %i\n", i);
             return;
         }
 
-        printf("Candidato %i: %i votos %.2fpercent\n", i + 1, e->votes, result);
+        printf("Candidato %i: %i votos %.2f%%\n", i + 1, e->votes[i], result);
     }
     return;
 }
