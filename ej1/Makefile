@@ -7,7 +7,7 @@ CC = gcc
 all: $(BINARY)
 
 Cajero: $(OBJS)
-	$(CC) -o $(CFLAGS) $(OBJS)
+	$(CC) -o $(BINARY) $(CFLAGS) $(OBJS)
 
 main.o: cashier.c cashier.h
 	$(CC) -c $(CFLAGS) main.c
