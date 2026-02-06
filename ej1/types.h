@@ -1,22 +1,16 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-
-typedef enum 
-{
-
+/* Definimos Status para el control de errores en las funciones */
+typedef enum {
     ERROR = 0,
     OK = 1
+} Status;
 
-}Status;
-
-typedef enum
-{
-
-    TRUE = 0,
-    FALSE = 1
-}Bool;
-
-
+/* Definimos Bool para comparaciones lógicas */
+typedef enum {
+    FALSE = 0,
+    TRUE = 1
+} Bool;
 
 #endif
