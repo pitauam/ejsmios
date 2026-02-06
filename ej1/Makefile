@@ -9,10 +9,11 @@ all: $(BINARY)
 Cajero: $(OBJS)
 	$(CC) -o $(BINARY) $(CFLAGS) $(OBJS)
 
-main.o: cashier.c cashier.h
+main.o: main.c cashier.h
 	$(CC) -c $(CFLAGS) main.c
 
-cashier.o : cashier.h
+#importante en cashier.o añadir tmbn cashier.c
+cashier.o : cashier.c cashier.h
 	$(CC) -c $(CFLAGS) cashier.c
 
 clean:

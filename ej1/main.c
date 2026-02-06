@@ -31,8 +31,6 @@ int main(void)
             {
                 printf("There was an error while depositing money!\n\n"); /*estoy pensando en si tengo que verificar aqui en el main que el dinero ingresado sea positivo para diferenciar entre error depositando y error porque has intentado meter dinero positivo*/
             }
-
-            
         }
         else if (choice == 2)
         {
@@ -43,8 +41,6 @@ int main(void)
             {
                 printf("There was an error while withdrawing money!\n\n");
             }
-
-            
         }
         else if (choice == -1)
         {
