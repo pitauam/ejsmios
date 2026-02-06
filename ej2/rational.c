@@ -81,10 +81,6 @@ Rational *rational_div(const Rational *r1, const Rational *r2)
     return rational_create((r1->n * r2->d), (r1->d * r2->n));
 }
 
-
-
-
-
 Status rational_print(const Rational *r)
 {
     if (!r)
