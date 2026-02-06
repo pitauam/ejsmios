@@ -1,0 +1,29 @@
+Ejercicio 2: Número racional. Escribir el código C de un TAD que represente un número
+racional, indicando el fichero donde se localizaría cada fragmento. Deben poder realizarse las
+siguientes operaciones:
+Sumar dos números racionales.
+Multiplicar dos números racionales.
+Dividir dos números racionales.
+Imprimir un número racional.
+A la hora de crear el número racional, se deberá reducir la fracción por el máximo común divisor,
+usando la función gcd que se proporciona:
+
+
+int main () {
+Rational * operator1 = NULL , * operator2 = NULL , *result = NULL;
+operator1 = rational_create (20, 3);
+operator2 = rational_create (6, 15);
+result = rational_sum (operator1 , operator2 );
+rational_print (result );
+rational_free (result );
+result = rational_prod (operator1 , operator2 );
+rational_print (result );
+rational_free (result );
+
+result = rational_div (operator1 , operator2 );
+rational_print (result );
+rational_free (result );
+rational_free ( operator1 );
+rational_free ( operator2 );
+return EXIT_SUCCESS ;
+}
